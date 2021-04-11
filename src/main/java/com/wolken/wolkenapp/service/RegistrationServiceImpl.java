@@ -30,6 +30,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public String validateAndAdd(RegistrationDTO dto)throws DTONullException,InvalidInputException,TransactionException,SessionException {
 		// TODO Auto-generated method stub
 		// 
+		logger.info("Entered Validate and add method processing it");
 		if(dto != null) {
 			if(dto.getContact_number() > 0 && !dto.getDateOfBirth().equals(null) && !dto.getEmailID().equals(null) && !dto.getGender().equals(null) && !dto.getUserName().equals(null) && !dto.getPassword().equals(null) ) {
 				
@@ -49,6 +50,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 					entity.setPassword(dto.getPassword());
 					entity.setConfirmPassword(dto.getConfirmPassword());
 					return dao.addAndSave(entity);
+					
 				}
 		
 			}
@@ -59,6 +61,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	
 	public RegistartionEntity validateAndGetUserByUserName(String userName) {
 		//validate the parameter
+		logger.info("entered validateAndGetUserByUserName method and processing it...");
 		entity = null;
 		if(!userName.equals(null)) {
 			entity = dao.getUserByUserName(userName);
@@ -69,6 +72,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	
 	public String validateAndUpdateByEmailID(RegistrationDTO dto) {
 		// Validate the parameter
+		logger.info("entered validateAndUpdateByEmailID method and processing it...");
 		int noOfRowsUpdated = -1;
 		if(!dto.getEmailID().equals(null)) {
 			// call daoimpl method
