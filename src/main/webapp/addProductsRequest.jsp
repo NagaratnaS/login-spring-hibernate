@@ -6,8 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<script src="js/products.js"></script>
 <body>
-	<form action="addproducts.do">
+	<form action="addproducts.do" name="infoForm" onsubmit="return validate()">
 	
 		<input type = "text" name = "productID" placeholder="productID">
 		<input type = "text" name = "productName" placeholder="productName">

@@ -8,6 +8,7 @@ function validate() {
 	const password = document.infoForm.password.value;
 	const confirmPassword = document.infoForm.cpassword.value;
 	
+	
 	console.log(password)
 	console.log(confirmPassword)
 	if (isNaN(contactNumber) == true){

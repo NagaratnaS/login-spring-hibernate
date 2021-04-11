@@ -26,7 +26,7 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String save(@ModelAttribute LoginDTO dto , HttpServletRequest request) {
 		String message = null;
-		System.out.print(dto.getUserName()+" "+dto.getPassword());
+		
 		try {
 			message = service.validateAndLogin(dto);
 			
